@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: prometest
+management:
+  security:
+    enabled: false
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+        step: 1m
+        descriptions: true
+  web:
+    server:
+      auto-time-requests: true
+  endpoints:
+    prometheus:
+      id: springmetrics
+    web:
+      exposure:
+        include: health,info,env,prometheus,metrics,httptrace,threaddump,heapdump,springmetrics
